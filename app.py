@@ -28,6 +28,13 @@ def api_key() -> str:
     key = os.getenv("OPENAI_API_KEY", "").strip()
     if key:
         return key
+    try:
+        key = str(st.secrets.get("OPENAI_API_KEY", "")).strip()
+        if key:
+            return key
+    except Exception:
+        # Streamlit Cloud secrets may not be configured yet; local .env is also supported.
+        pass
     for parent in (Path(__file__).resolve().parent, *Path(__file__).resolve().parents):
         env_file = parent / ".env"
         if env_file.is_file():

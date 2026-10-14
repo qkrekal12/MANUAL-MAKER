@@ -23,7 +23,7 @@ if not exist ".venv\Scripts\streamlit.exe" (
 )
 
 start "" http://127.0.0.1:8767
-".venv\Scripts\python.exe" -m streamlit run app.py --server.address 127.0.0.1 --server.port 8767 --browser.gatherUsageStats false
+".venv\Scripts\python.exe" -m streamlit run run_streamlit.py --server.address 127.0.0.1 --server.port 8767 --browser.gatherUsageStats false
 if errorlevel 1 goto failed
 exit /b 0
 

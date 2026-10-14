@@ -1,0 +1,10 @@
+{
+  "name": "manual-studio-local",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Local Windows app for generating illustrated user manuals",
+  "dependencies": {
+    "docx": "9.11.0"
+  }
+}
